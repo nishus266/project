@@ -34,7 +34,115 @@
                 height:90%;
             }
     </style>
+    <style>
+#modal-content {
+  display: none;
+  width:60%;
+  position: absolute;
+  top:35%;
+  background: black;
+  opacity: .8;
+  left:20%;
 
+  border-radius: 10px;
+  animation-name:hjkoj;
+  animation-duration: 3s;
+animation-iteration-count: infinite;
+}
+#imge{
+  cursor: pointer;
+}
+#imge:hover{
+  opacity:0.6;
+  cursor:pointer;
+}
+.tech{
+  float:left;
+  width:100%;
+  height:700px;
+  background: url('images/7.png') no-repeat center;
+  margin-top: 80px;
+}
+.tech1{
+  float:left;
+  width:100%;
+  height:700px;
+  background: url('images/8.jpg') no-repeat center;
+  margin-top: 80px;
+}
+#ghjab{
+  height:700px;
+}
+#ghjab1{
+  height:700px;
+}
+#ghjab2{
+  height:700px;
+}
+.helloj{
+  margin-top:20px;
+  margin-left: 10px;
+  font-size:28px;
+}
+.hellod{
+  background-color: black;
+  opacity:.7;
+  height:150px;
+  padding:10px;
+  padding-top: 15px;
+  border-radius:10px;
+  animation-name:hjkoj;
+  animation-duration: 3s;
+animation-iteration-count: infinite;
+}
+@keyframes hjkoj {
+from{
+  background-color: orange;
+  opacity:.7;
+}
+  to{
+    background-color: #7D3C98;
+    opacity:1;
+  }
+}
+@media screen and (max-width: 480px) {
+.tech1{
+  display:none;
+}
+.tech{
+  float:left;
+  width:100%;
+  height:1000px;
+  background: url('images/7.png') no-repeat center;
+  margin-top: 80px;
+}
+
+#modal-content {
+  display: none;
+  width:70%;
+  position: absolute;
+  top:35%;
+  background: black;
+  opacity: .8;
+  left:15%;
+  padding: 20px;
+  border-radius: 40px;
+}
+.helloj{
+  font-size:20px;
+}
+#ghjab{
+  height:450px;
+}
+#ghjab1{
+  height:450px;
+}
+#ghjab2{
+  height:450px;
+}
+}
+</style>
+<link rel="stylesheet" href="../css/main.css" >
     <script>
     function testCreditCard () {
   myCardNo = document.getElementById('CardNumber').value;
@@ -49,20 +157,25 @@
 
 </head>
 <body>
-    <h2 style="margin-left:15%;margin-top:2%;">Checkout</h2>
+  <section style="margin-top:100px;width:100%;float:left;">
+
 
 
               <!-- Credit Card Payment Form - START -->
 
 <div class="container">
+  <div class="row" style="margin-left:0px;">
+      <h3 class="text-center">Checkout</h3>
+
+  </div>
         <div class="row">
             <div class="col-xs-10 col-md-8 col-md-offset-8">
-                <form role="form">
+                <form role="form" method="post" action="confirm.php">
                         <div class="row">
                                 <div class="col-md-7 ">
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input type="input" class="form-control" required  />
+                                        <input type="input" class="form-control" name="name" required  />
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +183,7 @@
                                     <div class="col-md-7 ">
                                         <div class="form-group">
                                             <label>Last Name</label>
-                                            <input type="text" class="form-control" required  />
+                                            <input type="text" class="form-control" name="lname" required  />
                                         </div>
                                     </div>
                                 </div>
@@ -78,12 +191,12 @@
                                         <div class="col-md-7 ">
                                             <div class="form-group">
                                                 <label>Address</label>
-                                                <input type="text" class="form-control" required  />
+                                                <input type="text" class="form-control" name="address" required  />
                                             </div>
                                         </div>
                                     </div>
 
-                        <div class="row">
+                        <div class="row" style="margin-left:0px;">
                             <h3 class="text-center">Payment Details</h3>
 
                         </div>
@@ -93,9 +206,9 @@
 
 
                             <div class="row">
-                                <div class="col-md-7 mb-2 ">
+                                <div class="col-md-7 mb-2 " style="margin-left:10px;">
                                     <!--<label class="control-label pull-left">Select </label>-->
-                                    <select id="cardType" class="form-control">
+                                    <select id="cardType" class="form-control" name="cardtype">
                                           <option value="MasterCard">Master Card</option>
                                           <option value="Visa">Visa</option>
                                           <option value="AmEx">American Express</option>
@@ -115,55 +228,57 @@
                                     <div class="col-md-7 mb-2">
                                         <div class="form-group">
                                             <label>Card Number</label>
-                                            <input type="text" class="form-control" id="CardNumber"  onchange="testCreditCard()" required  />
+                                            <input type="text" class="form-control" id="CardNumber" name="cardnumber" onchange="testCreditCard()" required  />
                                         </div>
                                     </div>
                                 </div>
 
 
                             <div class="row">
-                                <div class="col-md-2 mb-1">
+                                <div class="col-md-2 mb-1" style="margin-left:10px;">
                                     <div class="form-group">
                                         <label>Expiration</label>
-                                            <select class="form-control">
-                                                    <option>01</option>
-                                                    <option>02</option>
-                                                    <option>03</option>
-                                                    <option>04</option>
-                                                    <option>05</option>
-                                                    <option>06</option>
-                                                    <option>07</option>
-                                                    <option>08</option>
-                                                    <option>09</option>
-                                                    <option>10</option>
-                                                    <option>11</option>
-                                                    <option>12</option>
+                                            <select class="form-control" name="month">
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
                                             </select>
                                     </div>
                                 </div>
-                                <div class="col-md-2 mb-2">
+                                <div class="col-md-2 mb-2" style="margin-left:10px;">
                                         <div class="form-group">
                                             <label>Year</label>
-                                                <select class="form-control">
-                                                        <option>2019</option>
-                                                        <option>2020</option>
-                                                        <option>2021</option>
-                                                        <option>2022</option>
-                                                        <option>2023</option>
-                                                        <option>2024</option>
-                                                        <option>2025</option>
-                                                        <option>2026</option>
-                                                        <option>2027</option>
-                                                        <option>2028</option>
-                                                        <option>2029</option>
-                                                        <option>2030</option>
+                                                <select class="form-control" name="year">
+                                                        <option value="2019">2019</option>
+                                                        <option value="2020">2020</option>
+                                                        <option value="2021">2021</option>
+                                                        <option value="2022">2022</option>
+                                                        <option value="2023">2023</option>
+                                                        <option value="2024">2024</option>
+                                                        <option value="2025">2025</option>
+                                                        <option value="2026">2026</option>
+                                                        <option value="2027">2027</option>
+                                                        <option value="2028">2028</option>
+                                                        <option value="2029">2029</option>
+                                                        <option value="2030">2030</option>
+                                                        <option value="2031">2031</option>
+                                                        <option value="2032">2032</option>
                                                 </select>
                                         </div>
                                     </div>
                                 <div class="col-md-3 mb-2">
                                     <div class="form-group">
-                                        <label>Security Code</label>
-                                        <input type="tel" class="form-control" required/>
+                                        <label>cvv</label>
+                                        <input type="tel" class="form-control" name="code" required/>
                                     </div>
                                 </div>
                             </div>
@@ -172,8 +287,8 @@
 
 
                         <div class="row">
-                            <div class="col-xs-12">
-                                <button class="btn btn-warning btn-lg btn-block" type="submit" onclick="testCreditCard();">Process payment</button>
+                            <div class="col-xs-12" style="margin-left:10px;">
+                                <button class="btn btn-warning btn-lg btn-block" type="submit" style="margin-left:5%;margin-bottom:20px;">Process payment</button>
                             </div>
                         </div>
 
@@ -182,13 +297,11 @@
             </div>
         </div>
     </div>
+  </section>
     <!-- Credit Card Payment Form - END -->
-
-
-            </div>
-          </div>
-        </div>
-
+<?php include '../footer.php' ?>
+<?php include 'nav.php'; ?>
+<script src="../script/main.js"></script>
 
 
     </body>

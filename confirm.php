@@ -1,0 +1,10 @@
+<?php
+$name=$_POST['name'];
+$lname=$_POST['lname'];
+$address=$_POST['address'];
+$cardtype=$_POST['cardtype'];
+$cardnumber=$_POST['cardnumber'];
+$month=$_POST['month'];
+$year=$_POST['year'];
+$code=$_POST['code'];
+ ?>
